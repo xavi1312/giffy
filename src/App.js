@@ -1,8 +1,13 @@
 import React from 'react';
-import './App.css';
+import ListOfGifs from 'Components/ListOfGifs';
+import { Home } from 'styles';
 
 function App() {
-  return <div className='App'></div>;
+  return (
+    <Home className='App'>
+      <ListOfGifs />
+    </Home>
+  );
 }
 
 export default App;
