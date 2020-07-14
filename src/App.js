@@ -1,10 +1,15 @@
 import React from 'react';
 import ListOfGifs from 'Components/ListOfGifs';
-import { Home } from 'styles';
+import { Home, LogoWrapper } from 'styles';
+import Logo from 'Components/Logo/Logo';
 
 function App() {
   return (
-    <Home className='App'>
+    <Home>
+      <LogoWrapper>
+        <Logo size='large' position='center' />
+      </LogoWrapper>
+
       <ListOfGifs />
     </Home>
   );

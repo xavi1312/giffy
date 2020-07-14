@@ -5,3 +5,7 @@ export const Home = styled.div`
   padding: 0 1rem;
   background-color: var(--black-color);
 `;
+
+export const LogoWrapper = styled.div`
+  padding: 2rem 0;
+`;

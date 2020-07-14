@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Gif from 'Components/Gif';
-import getGifs from '../../Services/GifsAPI';
+import getGifs from 'Services/GifsAPI';
 import { ListOfGifs } from './styles';
 
 const ListOfGifsComponent = ({ keyword = '' }) => {
