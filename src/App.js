@@ -7,7 +7,7 @@ function App() {
   return (
     <Home>
       <LogoWrapper>
-        <Logo size='large' position='center' />
+        <Logo size='large' aligment='center' />
       </LogoWrapper>
 
       <ListOfGifs />

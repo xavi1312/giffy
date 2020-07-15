@@ -5,4 +5,4 @@ const GifComponent = ({ id, title, url }) => {
   return <Gif src={url} alt={title} />;
 };
 
-export default GifComponent;
+export default React.memo(GifComponent);

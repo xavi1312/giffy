@@ -1,21 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Gif from 'Components/Gif';
-import getGifs from 'Services/GifsAPI';
+import Button from 'Components/Button';
+import useGifs from 'Hooks/useGifs';
 import { ListOfGifs } from './styles';
+import { useCallback } from 'react';
 
-const ListOfGifsComponent = ({ keyword = '' }) => {
-  const [gifs, setGifs] = useState([]);
+const ListOfGifsComponent = ({ keyword }) => {
+  const { gifs, setPage } = useGifs({ keyword });
 
-  useEffect(() => {
-    getGifs(keyword).then(gifs => setGifs(gifs));
-  }, [keyword]);
+  const handleClick = useCallback(() => {
+    setPage(prev => prev + 1);
+  }, [setPage]);
 
   return (
-    <ListOfGifs>
-      {gifs.map(({ id, title, url }) => (
-        <Gif key={id} id={id} title={title} url={url} />
-      ))}
-    </ListOfGifs>
+    <>
+      <ListOfGifs>
+        {gifs.map(({ id, title, url }) => (
+          <Gif key={id} id={id} title={title} url={url} />
+        ))}
+      </ListOfGifs>
+
+      <Button onClick={handleClick} aligment='center'>
+        Load more
+      </Button>
+    </>
   );
 };
 
