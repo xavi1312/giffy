@@ -17,5 +17,6 @@ function setSize({ size }) {
 export const Logo = styled.img`
   display: block;
   ${setSize}
+  max-width: 100%;
   ${setAligment}
 `;

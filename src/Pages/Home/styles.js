@@ -7,8 +7,3 @@ export const Home = styled.div`
   padding-bottom: 1rem;
   background-color: ${BLACk_COLOR.cssVar};
 `;
-
-export const LogoWrapper = styled.div`
-  background: '#ffffff';
-  padding: 2rem 0;
-`;
