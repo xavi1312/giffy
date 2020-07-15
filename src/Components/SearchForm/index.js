@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Button from 'Components/Button';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import { Form } from './styles';
 
 const SearchForm = () => {
-  const [keyword, setKeyword] = useState();
+  const initialKeyword = useParams().keyword;
+  const [keyword, setKeyword] = useState(initialKeyword);
   const history = useHistory();
 
   const handleChange = e => {
@@ -12,16 +14,19 @@ const SearchForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    console.log(keyword);
     history.push(`/search/${keyword}`);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <Button>Search</Button>
-
-      <input type='text' name='keyword' onChange={handleChange} />
-    </form>
+      <input
+        type='text'
+        value={initialKeyword}
+        name='keyword'
+        onChange={handleChange}
+      />
+    </Form>
   );
 };
 

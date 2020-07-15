@@ -10,3 +10,19 @@ body {
 
   margin: 0;
 }
+
+body::-webkit-scrollbar,
+#app::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+}
+body::-webkit-scrollbar-track,
+#app::-webkit-scrollbar-track {
+  background-color: var(--black-color);
+}
+
+body::-webkit-scrollbar-thumb,
+#app::-webkit-scrollbar-thumb {
+  display: none;
+}

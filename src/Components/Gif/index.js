@@ -1,8 +1,17 @@
 import React from 'react';
-import { Gif } from './styles';
+import { Gif, Img, Title } from './styles';
 
 const GifComponent = ({ id, title, url }) => {
-  return <Gif src={url} alt={title} />;
+  return (
+    <Gif>
+      <Img height='200px' loading='lazy' src={url} alt={title} />
+      {title && (
+        <Title>
+          <small>{title}</small>
+        </Title>
+      )}
+    </Gif>
+  );
 };
 
 export default React.memo(GifComponent);

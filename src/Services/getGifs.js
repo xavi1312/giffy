@@ -4,7 +4,7 @@ const BASE_URL = 'https://api.giphy.com/v1/gifs';
 // Extract gif info from response data
 function resToGifs(data) {
   return data.map(gif => {
-    const url = gif.images.downsized_large.url;
+    const url = gif.images.original.webp;
     const { id, title } = gif;
 
     return { id, title, url };

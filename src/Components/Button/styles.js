@@ -27,12 +27,15 @@ export const Button = styled.button`
   margin-top: 1rem;
   
   border: none;
-  border-radius: 2px;
+  border-radius: 0.125em;
   background-color: ${PRIMARY_COLOR.cssVar};
 
-  box-shadow: 2px 2px ${Darken(PRIMARY_COLOR.color, 120)};
+  box-shadow: 0.125em 0.125em ${Darken(PRIMARY_COLOR.color, 120)};
   :active {
-    box-shadow: inset 2px 2px 3px ${Darken(PRIMARY_COLOR.color, 120)};
+    box-shadow: inset 0.125em 0.125em 0.188em ${Darken(
+      PRIMARY_COLOR.color,
+      120
+    )};
   }
   outline: none;
 `;
