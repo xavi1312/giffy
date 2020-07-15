@@ -11,7 +11,7 @@ const useGifs = ({ keyword = 'pokemon' }) => {
     );
   }, [keyword, page]);
 
-  return { gifs, setGifs, setPage };
+  return { gifs, setPage };
 };
 
 export default useGifs;
