@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as LinkRouter } from 'react-router-dom';
 import { PRIMARY_COLOR, Darken, BLACk_COLOR } from 'styles/colors';
 import { setAligment } from 'styles/functions';
 
@@ -38,4 +39,7 @@ export const Button = styled.button`
     )};
   }
   outline: none;
+`;
+export const Link = styled(Button.withComponent(LinkRouter))`
+  text-decoration: none;
 `;
