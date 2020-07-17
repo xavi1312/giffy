@@ -11,12 +11,3 @@ export const ListOfGifs = styled.section`
   gap: 1rem;
   min-height: 100vh;
 `;
-
-export const Title = styled.h1`
-  font-size: 3rem;
-  font-weight: 700;
-  color: #fff;
-  text-transform: capitalize;
-
-  margin: 0.2em 0;
-`;

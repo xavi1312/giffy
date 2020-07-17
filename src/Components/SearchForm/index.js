@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Button from 'Components/Button';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Form } from './styles';
 
-const SearchForm = () => {
-  const initialKeyword = useParams().keyword;
+const SearchForm = ({ initialKeyword = '' }) => {
   const [keyword, setKeyword] = useState(initialKeyword);
   const history = useHistory();
 
@@ -22,8 +21,9 @@ const SearchForm = () => {
       <Button>Search</Button>
       <input
         type='text'
-        value={initialKeyword}
+        value={keyword}
         name='keyword'
+        placeholder='Search your gif...'
         onChange={handleChange}
       />
     </Form>

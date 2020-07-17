@@ -7,7 +7,6 @@ export const Form = styled.form`
   max-width: 350px;
 
   button {
-    margin: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }

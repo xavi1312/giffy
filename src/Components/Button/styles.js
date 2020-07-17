@@ -25,7 +25,6 @@ export const Button = styled.button`
 
   color: ${BLACk_COLOR.cssVar};
   ${fontSize};
-  margin-top: 1rem;
   
   border: none;
   border-radius: 0.125em;

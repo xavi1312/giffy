@@ -12,7 +12,7 @@ function resToGifs(data) {
 }
 
 const getGifs = async ({ keyword = 'pokemon', limit = 15, page = 0 }) => {
-  const offset = limit * page;
+  const offset = limit * page + 1;
   const url = `${BASE_URL}/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${offset}&rating=g&lang=en`;
   let gifs;
   try {

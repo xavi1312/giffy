@@ -13,4 +13,4 @@ const HeroLogo = () => {
   );
 };
 
-export default HeroLogo;
+export default React.memo(HeroLogo);
