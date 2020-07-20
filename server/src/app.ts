@@ -3,6 +3,8 @@ import morgan from 'morgan';
 import cors from 'cors';
 import passport from 'passport';
 import config from './config';
+import passportMidelware from './middlewares/passport';
+import authRoutes from './routes/auth.routes';
 
 // intialitations
 const app = express();
@@ -16,10 +18,13 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(passport.initialize());
+passport.use(passportMidelware);
 
 // routes
 app.get('/', (req, res) => {
   res.send(`La API está escuchando por el puerto ${app.get('port')}`);
 });
+
+app.use(authRoutes);
 
 export default app;
