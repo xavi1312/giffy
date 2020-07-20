@@ -11,9 +11,14 @@ function resToGifs(data) {
   });
 }
 
-const getGifs = async ({ keyword = 'pokemon', limit = 15, page = 0 }) => {
-  const offset = limit * page + 1;
-  const url = `${BASE_URL}/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${offset}&rating=g&lang=en`;
+const getGifs = async ({
+  keyword = 'pokemon',
+  raiting = 'g',
+  limit = 25,
+  page = 0,
+}) => {
+  const offset = limit * page;
+  const url = `${BASE_URL}/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${offset}&rating=${raiting}&lang=en`;
   let gifs;
   try {
     const res = await fetch(url);

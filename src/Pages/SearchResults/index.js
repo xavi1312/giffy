@@ -13,8 +13,8 @@ import HeroLogo from 'Components/HeroLogo';
 import Spiner from 'Components/Spiner';
 
 const SearchResults = () => {
-  const { keyword } = useParams();
-  const { gifs, isLoading, setPage } = useGifs({ keyword });
+  const { keyword, raiting } = useParams();
+  const { gifs, isLoading, setPage } = useGifs({ keyword, raiting });
   const [ref, inView] = useInView({ rootMargin: '200px' });
 
   const nextPage = useCallback(
@@ -30,7 +30,7 @@ const SearchResults = () => {
   return (
     <>
       <HeroLogo />
-      <SeachForm />
+      <SeachForm initialKeyword={keyword} initialRaiting={raiting} />
       <Title>{keyword}</Title>
       <ListOfGifs gifs={gifs} />
       {isLoading && <Spiner aligment='center' />}

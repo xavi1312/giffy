@@ -1,19 +1,29 @@
-import React, { useState } from 'react';
-import Button from 'Components/Button';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Form } from './styles';
+import { useSeachForm } from './useSeachForm';
+import Button from 'Components/Button';
+import { Form, Select } from './styles';
 
-const SearchForm = ({ initialKeyword = '' }) => {
-  const [keyword, setKeyword] = useState(initialKeyword);
+const RAITINGS = ['g', 'pg', 'pg-13', 'r'];
+
+const SearchForm = ({ initialKeyword = '', initialRaiting = 'g' }) => {
+  const { keyword, raiting, updateKeyword, updateRaiting } = useSeachForm({
+    initialKeyword,
+    initialRaiting,
+  });
   const history = useHistory();
 
-  const handleChange = e => {
-    setKeyword(e.target.value);
+  const handleChangeKeyword = e => {
+    updateKeyword(e.target.value);
   };
+  const handleChangeRaiting = e => {
+    updateRaiting(e.target.value);
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
 
-    history.push(`/search/${keyword}`);
+    history.push(`/search/${keyword}/${raiting}`);
   };
 
   return (
@@ -24,8 +34,17 @@ const SearchForm = ({ initialKeyword = '' }) => {
         value={keyword}
         name='keyword'
         placeholder='Search your gif...'
-        onChange={handleChange}
+        onChange={handleChangeKeyword}
       />
+      <Select onChange={handleChangeRaiting} defaultValue={initialRaiting}>
+        {RAITINGS.map(raiting => {
+          return (
+            <option key={raiting} value={raiting}>
+              {raiting}
+            </option>
+          );
+        })}
+      </Select>
     </Form>
   );
 };

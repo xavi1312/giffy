@@ -15,7 +15,11 @@ function App() {
         <GifsContextProvider>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/search/:keyword' component={SearchResults} />
+            <Route
+              exact
+              path='/search/:keyword/:raiting'
+              component={SearchResults}
+            />
             <Route component={NotFound} />
           </Switch>
         </GifsContextProvider>
