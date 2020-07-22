@@ -15,6 +15,12 @@ class UserService {
 
     return newUser;
   }
+
+  async deleteUser(userID: string) {
+    const userDeleted = User.deleteOne({ _id: userID });
+
+    return userDeleted;
+  }
 }
 
 export default UserService;

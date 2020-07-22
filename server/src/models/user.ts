@@ -8,7 +8,7 @@ export interface IUser extends Document {
   comparePassword: (password: string) => Promise<Boolean>;
 }
 
-const userSchema = new Schema({
+export const userSchema = new Schema({
   email: {
     type: String,
     unique: true,
