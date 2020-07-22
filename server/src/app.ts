@@ -2,9 +2,12 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import passport from 'passport';
+
 import config from './config';
 import passportMidelware from './middlewares/passport';
+
 import authRoutes from './routes/auth.routes';
+import favoriteRoutes from './routes/favorite.routes';
 
 // intialitations
 const app = express();
@@ -26,5 +29,6 @@ app.get('/', (req, res) => {
 });
 
 app.use(authRoutes);
+app.use(favoriteRoutes);
 
 export default app;
